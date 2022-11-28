@@ -1,6 +1,3 @@
-from email.headerregistry import Address
-from tkinter import TRUE
-from tokenize import blank_re
 from django.db import models
 from django.contrib.auth.models import User
 from home.models import Product
