@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block header %}{% include 'header.html' %} {% endblock header %}
+{% block carousel %}{% include 'carousel.html' %} {% endblock carousel %}
+
+{% block content %}
+    
+<div class="container welcome mb-5 home">
+    <h1 class="text-center pt-5 title">Welcome To Slickboom</h1>
+    
+    {% if cat %}
+        {% for item in cat %} 
+    <div class="card mb-3 mt-5">
+        <div class="row g-0">
+          <div class="col-md-6 benz">
+            <a href="/car details/detail.html"><img src="{{item.pix.url}}" class="img-fluid rounded-start" alt="..." style="height: 400px;" ></a>
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h5 class="card-title text-center">{{item.brand|title}}</h5>
+              <p class="card-text text-center">{{item.description}}</p>
+              <button class="btn btn-warning mt-3">view more</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}
+   
+    
